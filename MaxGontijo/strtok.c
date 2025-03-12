@@ -21,22 +21,24 @@ char** strtok(char *string, char carac, int *quantidade){
 
     i = 0;
 
+    char *aux = string;
+
     // Itera para criar as substrings e armazená-las
     for(int j = 0; j < quant + 1; j++){
         // Avança até encontrar o delimitador ou o final da string
-        while(string[i] != carac && string[i] != '\0')
+        while(aux[i] != carac && aux[i] != '\0')
             i++;
 
         // Aloca memória para a substring (com espaço para o caractere nulo '\0')
         mat_string[j] = malloc((i + 1) * sizeof(char));
 
-        mat_string[j] = string;
+        mat_string[j] = aux;
 
         // Insere o caractere nulo no final da substring para delimitá-la corretamente
         mat_string[j][i] = '\0';
 
         // Move o ponteiro da string para a próxima parte após o delimitador
-        string = string + i + 1;
+        aux = aux + i + 1;
 
         // Reinicia o índice para processar a próxima substring
         i = 0;
