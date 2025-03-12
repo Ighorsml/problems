@@ -30,7 +30,6 @@ char** strtok(char *string, char carac, int *quantidade){
         // Aloca memória para a substring (com espaço para o caractere nulo '\0')
         mat_string[j] = malloc((i + 1) * sizeof(char));
 
-        // Aqui ocorre um erro: em vez de copiar a substring, está apenas atribuindo o ponteiro original
         mat_string[j] = string;
 
         // Insere o caractere nulo no final da substring para delimitá-la corretamente
